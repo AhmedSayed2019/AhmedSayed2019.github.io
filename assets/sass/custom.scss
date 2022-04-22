@@ -1,0 +1,192 @@
+@import "libs/vars";
+@import "libs/functions";
+@import "libs/mixins";
+@import "libs/vendor";
+@import "libs/breakpoints";
+@import "libs/html-grid";
+body {}
+
+h2 {
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.underline-img {
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    display: block;
+}
+
+#my-work {
+    padding: 2.5em 0 2.5em 0;
+    margin-bottom: 0;
+}
+
+
+/* carousel */
+
+.carousel {
+    article {
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        .image.featured {
+            // margin-bottom: 0 !important;
+        }
+        .my-work-artical {
+            position: absolute;
+            opacity: 0;
+            display: inline-block;
+            z-index: 2;
+            // cursor: crosshair;
+            transition: all 0.8s ease-out;
+            height: 0%;
+            bottom: 0%;
+            overflow: hidden;
+            width: 100%;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+        }
+        &:hover {
+            .my-work-artical {
+                opacity: 1 !important;
+                background: rgba(47, 49, 52, 0.93);
+                color: #fff;
+                width: 100%;
+                height: 100% !important;
+                transition: all 0.6s ease-out;
+            }
+            img {
+                transform: scale3d(1.1, 1.1, 1.1);
+                transition: all 0.6s;
+            }
+        }
+    }
+    .forward:after,
+    .backward:after {
+        background: url(images/pngegg.png) no-repeat center center;
+        // background: url(images/angle-right-solid.svg) no-repeat center center;
+    }
+}
+
+.contact {
+    // text-align: center;
+    margin-top: 1rem;
+}
+
+// #contact {
+//     h2 {
+//         text-align: left;
+//         margin-bottom: 2rem;
+//     }
+//     .underline-img {
+//         margin-left: 0;
+//     }
+// }
+
+/* form */
+
+.contact-form {
+    width: 80%;
+    .inputbox {
+        overflow: hidden;
+        position: relative;
+        padding: 5% 0;
+        &-content {
+            position: relative;
+            input {
+                box-sizing: border-box;
+                background-color: transparent;
+                border: 0;
+                border-bottom: 1px solid #000;
+                height: 40px;
+                outline: none;
+                color: #000;
+                border-radius: 0;
+                -webkit-appearance: none;
+                &:focus,
+                &:valid {
+                    border-bottom: none;
+                    &~label {
+                        color: #9aa6e4;
+                        transform: translateY(-20px);
+                        cursor: default;
+                        font-size: 12px;
+                    }
+                }
+                &:focus {
+                    &~.underline {
+                        width: 100%;
+                    }
+                }
+            }
+            label {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                line-height: 40px;
+                color: #000;
+                cursor: text;
+                transition: all 250ms ease-out;
+                z-index: 10;
+            }
+            .underline {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                transition: all 250ms ease-out;
+                background-color: #9aa6e4;
+            }
+        }
+    }
+    button {
+        background-color: #000;
+        color: #fff;
+        width: 100%;
+        height: 40px;
+        transition: all 100ms ease-out;
+        outline: none;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        &:focus,
+        &:hover {
+            transform: translateY(-3px);
+        }
+    }
+}
+
+
+/* footer */
+
+#footer {
+    padding: 2em;
+    * {
+        color: #fff !important;
+    }
+    .menu {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .contact-form {
+        width: 100%;
+    }
+    #footer,
+    #contact,
+    #about {
+        padding: 1em 2em;
+    }
+    section {
+        margin-bottom: 0;
+    }
+}
