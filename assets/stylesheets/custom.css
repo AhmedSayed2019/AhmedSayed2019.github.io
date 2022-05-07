@@ -6,6 +6,8 @@ h2 {
   margin-bottom: 1rem;
 }
 
+
+
 /* line 16, ../sass/custom.scss */
 .underline-img {
   max-width: 40%;
@@ -34,6 +36,7 @@ h2 {
   opacity: 0;
   display: inline-block;
   z-index: 2;
+
   transition: all 0.8s ease-out;
   height: 0%;
   bottom: 0%;
@@ -181,3 +184,6 @@ h2 {
     margin-bottom: 0;
   }
 }
+.my-work-artical h3{color: #fff !important; }
+
+#contact{text-align: center;}
