@@ -41931,7 +41931,7 @@ A.EN.prototype={
 F(a){var s,r=null,q=A.II(),p=A.cN("About",r,r,A.a9(a).RG.x,r,r),o=A.a9(a).RG.x
 o.toString
 s=t.p
-return new A.cz(B.cw,A.el(A.a([q,new A.cz(B.cw,A.iw(A.a([p,A.cN(" Me",r,r,o.dI(A.a9(a).fy).zq(B.aN),r,r)],s),B.a0,B.S,B.aG),r),A.cN("I\u2019m Ahmed Sayed, I have 5+ year Flutter mobile development experience. 1+ year Android development experience. Experience in publishing process on store Experience connecting applications to RESTful services. Experience with mobile relational databases and offline data syncing. Excellent problem-solving, analytical, and troubleshooting skills. Strong knowledge of Android UI design principles, patterns, and best practices. Excellent communication skills. experience in an agile environment.",r,r,A.a9(a).RG.at,r,r)],s),B.b6,B.S),r)}}
+return new A.cz(B.cw,A.el(A.a([q,new A.cz(B.cw,A.iw(A.a([p,A.cN(" Me",r,r,o.dI(A.a9(a).fy).zq(B.aN),r,r)],s),B.a0,B.S,B.aG),r),A.cN("Software developer with 5+ years of experience in developing mobile applications using Flutter and native Android. I have a solid understanding of the full mobile development life cycle. I have a passion for learning and sharing my knowledge with others as publicly as possible. I have a strong interest in open-source projects and I am a contributor to many open-source projects. I am a self-motivated person who can work independently or as part of a team. I am a good communicator and can explain technical concepts to non-technical people. I am a perfectionist and I pay attention to all the details, plus I am a problem solver and I like to find the best solution for every problem.",r,r,A.a9(a).RG.at,r,r)],s),B.b6,B.S),r)}}
 A.Gf.prototype={
 F(a){var s=null
 return A.el(A.a([A.II(),new A.cz(B.cw,A.cN("Coding",s,s,A.a9(a).RG.x,s,s),s),new A.lH(0.7,"Dart",s),new A.lH(0.68,"Python",s),new A.lH(0.9,"HTML",s),new A.lH(0.75,"CSS",s),new A.lH(0.58,"JavaScript",s)],t.p),B.b6,B.S)}}
@@ -41939,7 +41939,7 @@ A.Gm.prototype={
 F(a){var s=null,r=t.p
 return A.d9(s,A.iw(A.a([A.Kh(s,A.Qo("assets/icons/whatsapp.svg",B.h),s,new A.a0f(),s),A.Kh(s,A.Qo("assets/icons/linkedin.svg",B.h),s,new A.a0g(),s),A.Kh(s,A.Qo("assets/icons/github.svg",B.h),s,new A.a0h(),s),new A.n0(1,s),new A.Qu(new A.a0i(),s,s,s,s,B.u,s,!1,s,A.avF(B.a1,A.iw(A.a([A.cN("CV",s,s,A.bX(s,s,A.a9(a).RG.y.b,s,s,s,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s,s,s),s,s),A.d3(s,s,10),A.Qo("assets/icons/download.svg",B.h)],r),B.a0,B.S,B.aG),B.u,B.ne),s)],r),B.a0,B.S,B.aG),B.u,s,s,s,s,s,new A.aV(0,20,0,0),s,s,s,s)}}
 A.a0f.prototype={
-$0(){return A.ns(A.fG("https://web.whatsapp.com/send/?phone=+201020139072",0,null))},
+$0(){return A.ns(A.fG("https://web.whatsapp.com/send/?phone=(+2)010-2013-9072",0,null))},
 $S:0}
 A.a0g.prototype={
 $0(){return A.ns(A.fG("https://www.linkedin.com/in/ahmedsayed2019",0,null))},
@@ -41958,7 +41958,7 @@ F(a){var s=null
 return new A.cz(B.KL,A.iw(A.a([A.Qo("assets/icons/check.svg",A.a9(a).fy),A.d3(s,s,10),A.cN(this.c,s,s,s,s,s)],t.p),B.a0,B.S,B.aG),s)}}
 A.MY.prototype={
 F(a){var s=null,r=A.a([A.a9(a).go,A.a9(a).id],t.Y),q=A.a9(a).RG.x
-return new A.qh(1.23,A.d9(s,A.el(A.a([new A.n0(2,s),new A.Fv(new A.rU("assets/images/my_image.jpg"),50,s),new A.n0(1,s),A.cN("Ahmed Sayed",s,s,q==null?s:q.dI(B.h),s,s),A.cN("Mobile Software Engineer",s,s,A.bX(s,s,B.h,s,s,s,s,s,s,s,s,s,s,s,B.eE,s,1.5,!0,s,s,s,s,s,s,s,s),B.bv,s),A.cN("+201020139072",s,s,A.bX(s,s,B.h,s,s,s,s,s,s,s,s,s,s,s,B.eE,s,1.5,!0,s,s,s,s,s,s,s,s),B.bv,s),new A.Gm(s),new A.n0(2,s)],t.p),B.a0,B.S),B.u,s,s,new A.dB(s,s,s,s,s,new A.ii(B.d8,B.cl,B.as,r,s,s),s,B.au),s,s,s,s,s,s,s),s)}}
+return new A.qh(1.23,A.d9(s,A.el(A.a([new A.n0(2,s),new A.Fv(new A.rU("assets/images/my_image.jpg"),50,s),new A.n0(1,s),A.cN("Ahmed Sayed",s,s,q==null?s:q.dI(B.h),s,s),A.cN("Mobile Software Engineer",s,s,A.bX(s,s,B.h,s,s,s,s,s,s,s,s,s,s,s,B.eE,s,1.5,!0,s,s,s,s,s,s,s,s),B.bv,s),A.cN("(+2)010-2013-9072",s,s,A.bX(s,s,B.h,s,s,s,s,s,s,s,s,s,s,s,B.eE,s,1.5,!0,s,s,s,s,s,s,s,s),B.bv,s),new A.Gm(s),new A.n0(2,s)],t.p),B.a0,B.S),B.u,s,s,new A.dB(s,s,s,s,s,new A.ii(B.d8,B.cl,B.as,r,s,s),s,B.au),s,s,s,s,s,s,s),s)}}
 A.Ax.prototype={
 F(a){var s=null,r=t.p
 return new A.J9(A.axh(!0,A.el(A.a([new A.MY(s),A.r5(A.axo(A.el(A.a([new A.EN(s),new A.PW(s),A.d3(s,20,s),new A.Gf(s),new A.KF(s),A.II(),A.d3(s,10,s)],r),B.a0,B.S),new A.aV(20,20,20,20)),1)],r),B.a0,B.S),!0),s)}}
