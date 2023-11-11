@@ -1,65 +1,118 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Ahmed Sayed</title>
-    <script defer src="index.dart.js" type="application/javascript"></script>
 
-    <style>
-    .loading {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-    }
+
+<!--<html>
+<head>
+<meta charset="UTF-8">
+<title>Ahmed Sayed</title>
+<script defer src="index.dart.js" type="application/javascript"></script>
+
+<style>
+.loading {
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+}
 
     .loader {
-      border: 16px solid #f3f3f3;
-      border-radius: 50%;
-      border-top: 16px solid blue;
-      border-right: 16px solid green;
-      border-bottom: 16px solid red;
-      border-left: 16px solid pink;
-      width: 120px;
-      height: 120px;
-      -webkit-animation: spin 2s linear infinite;
-      animation: spin 2s linear infinite;
-    }
+border: 16px solid #f3f3f3;
+border-radius: 50%;
+border-top: 16px solid blue;
+border-right: 16px solid green;
+border-bottom: 16px solid red;
+border-left: 16px solid pink;
+width: 120px;
+height: 120px;
+-webkit-animation: spin 2s linear infinite;
+animation: spin 2s linear infinite;
+}
 
-    @-webkit-keyframes spin {
-      0% {
-        -webkit-transform: rotate(0deg);
-      }
-      100% {
-        -webkit-transform: rotate(360deg);
-      }
-    }
+@-webkit-keyframes spin {
+0% {
+-webkit-transform: rotate(0deg);
+}
+100% {
+-webkit-transform: rotate(360deg);
+}
+}
 
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-  </style>
-  </head>
+@keyframes spin {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
 
-  <body>
-  <div class="loading">
-    <div class="loader"></div>
-  </div>
+</style>
+</head>
 
-  <script src="main.dart.js" type="application/javascript"></script>
-  </body>
+<body>
+<div class="loading">
+<div class="loader"></div>
+</div>
 
-</html>
+<script src="main.dart.js" type="application/javascript"></script>
+</body>
+
+</html>-->
+
+
+<html>
+<style>
+.loading {
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+}
+
+    .loader {
+border: 16px solid #f3f3f3;
+border-radius: 50%;
+border-top: 16px solid blue;
+border-right: 16px solid green;
+border-bottom: 16px solid red;
+border-left: 16px solid pink;
+width: 120px;
+height: 120px;
+-webkit-animation: spin 2s linear infinite;
+animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+0% {
+-webkit-transform: rotate(0deg);
+}
+100% {
+-webkit-transform: rotate(360deg);
+}
+}
+
+@keyframes spin {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
+
+
+</style>
+<head>
     <!--
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
@@ -73,38 +126,40 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-    <base href="/" />
-<!--    <base href="https://ahmedsayed2019.github.io/" />-->
+    <base href="/"/>
+    <!--    <base href="https://ahmedsayed2019.github.io/" />-->
 
-    <meta charset="UTF-8" />
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
-    <meta name="description" content="A new Flutter project." />
+    <meta charset="UTF-8"/>
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+    <meta name="description" content="A new Flutter project."/>
 
     <!-- iOS meta tags & icons -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="flutter_portfolio" />
-    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-title" content="flutter_portfolio"/>
+    <link rel="apple-touch-icon" href="icons/Icon-192.png"/>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/jpg" href="favicon.jpg" />
+    <link rel="icon" type="image/jpg" href="favicon.jpg"/>
 
-    <title>flutter_portfolio</title>
-    <link rel="manifest" href="manifest.json" />
+    <title>Ahmed Sayed</title>
+    <link rel="manifest" href="manifest.json"/>
 
     <script>
       // The value below is injected by flutter build, do not touch.
-      var serviceWorkerVersion = '3711160097';
+      const serviceWorkerVersion = "3964136143";
+
+
     </script>
     <!-- This script adds the flutter initialization JS code -->
     <script src="flutter.js" defer></script>
-  </head>
-  <body>
-    <!-- Loading Indicator -->
-    <div class="container" id="loading_container">
-      <img alt="loading indicator" class="indicator" src="./assets/loading.gif" />
-    </div>
-    <script>
+</head>
+<body>
+<!-- Loading Indicator -->
+<div class="container" id="loading_container">
+    <img alt="loading indicator" class="indicator" src="./assets/loading.gif"/>
+</div>
+<script>
       window.onload = function () {
         setTimeout(function () {
           var loadingIndicator = document.getElementById("loading_container");
@@ -113,8 +168,10 @@
           }
         }, 1000);
       };
-    </script>
-    <script>
+
+
+</script>
+<script>
       window.addEventListener("load", function (ev) {
         // Download main.dart.js
         _flutter.loader.loadEntrypoint({
@@ -128,6 +185,8 @@
           },
         });
       });
-    </script>
-  </body>
+
+
+</script>
+</body>
 </html>
