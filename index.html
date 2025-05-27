@@ -1,22 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
 
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-    <base href="/" />
-<!--    <base href="https://ahmedsayed2019.github.io/" />-->
-
+<head>
     <meta charset="UTF-8" />
     <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
     <meta name="description" content="A new Flutter project." />
@@ -26,51 +11,128 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-title" content="flutter_portfolio" />
     <link rel="apple-touch-icon" href="icons/Icon-192.png" />
-
-    <!-- Favicon -->
     <link rel="icon" type="image/jpg" href="favicon.jpg" />
-
-    <title>flutter_portfolio</title>
     <link rel="manifest" href="manifest.json" />
+    <title>flutter_portfolio</title>
 
-    <script>
-      // The value below is injected by flutter build, do not touch.
-      var serviceWorkerVersion = '1991459447';
-    </script>
-    <!-- This script adds the flutter initialization JS code -->
-    <script src="flutter.js" defer></script>
-  </head>
-  <body>
-    <!-- Loading Indicator -->
-    <div class="container" id="loading_container">
-    <img alt="loading indicator" class="indicator" src="./assets/images/my_image.jpg" />
+    <base href="$FLUTTER_BASE_HREF" />
 
-      <!--      <img alt="loading indicator" class="indicator" src="./assets/loading.gif" />-->
-    </div>
-    <script>
-      window.onload = function () {
-        setTimeout(function () {
-          var loadingIndicator = document.getElementById("loading_container");
-          if (loadingIndicator) {
-            loadingIndicator.remove();
-          }
-        }, 1000);
-      };
-    </script>
-    <script>
-      window.addEventListener("load", function (ev) {
-        // Download main.dart.js
-        _flutter.loader.loadEntrypoint({
-          serviceWorker: {
-            serviceWorkerVersion: serviceWorkerVersion,
-          },
-          onEntrypointLoaded: function (engineInitializer) {
-            engineInitializer.initializeEngine().then(function (appRunner) {
-              appRunner.runApp();
-            });
-          },
-        });
+    <style>
+    body {
+      /* Optional: Set a background color for the loading screen */
+      background-color: #ffffff; /* White background */
+      margin: 0; /* Ensure no default body margin */
+    }
+
+    .loading {
+      display: flex;
+      flex-flow: column; /* Stack image and name vertically */
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center; /* Center text */
+    }
+
+    .loading-photo {
+      width: 120px; /* Adjust size as needed */
+      height: 120px; /* Adjust size as needed */
+      border-radius: 50%; /* Make it circular */
+      margin-bottom: 20px; /* Space between photo and name */
+      animation: pulse 2.5s infinite ease-in-out; /* Apply pulse animation */
+      object-fit: cover; /* Ensure the image covers the area well */
+      border: 3px solid #f0f0f0; /* Optional subtle border */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+    }
+
+    .loading-name {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Choose a suitable font */
+      font-size: 1.3em; /* Adjust size as needed */
+      color: #333; /* Adjust color as needed */
+      margin: 0; /* Remove default paragraph margin */
+      font-weight: 600;
+    }
+
+    /* Pulse Animation */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.9;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0.9;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- New Formal Loading Screen -->
+<div class="loading">
+    <img src="favicon.jpg" alt="Loading - Ahmed Sayed" class="loading-photo" />
+    <p class="loading-name">Ahmed sayed</p>
+</div>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics-compat.js"></script>
+
+<!-- Firebase Initialization -->
+<script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBJEuBWzxCXFYkg2XmyndmF9liyCptZixs",
+      authDomain: "portfolio-ahmed-sayed.firebaseapp.com",
+      projectId: "portfolio-ahmed-sayed",
+      storageBucket: "portfolio-ahmed-sayed.appspot.com",
+      messagingSenderId: "491952033244",
+      appId: "1:491952033244:web:2187673b59ddee9ee61319",
+      measurementId: "G-0S5SYC7LH8"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+<!-- Flutter engine script -->
+<script src="flutter.js" defer></script>
+<script>
+    var serviceWorkerVersion = null;
+
+    window.addEventListener("load", function () {
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function (engineInitializer) {
+          engineInitializer.initializeEngine().then(function (appRunner) {
+            // Hide the loading screen once the Flutter app is ready to run
+            var loadingScreen = document.querySelector('.loading');
+            if (loadingScreen) {
+              // Optional: Add a fade-out effect
+              loadingScreen.style.transition = 'opacity 0.5s ease-out';
+              loadingScreen.style.opacity = '0';
+              // Remove the loading screen from the DOM after the transition
+              setTimeout(function() {
+                loadingScreen.remove();
+              }, 500); // Match the transition duration
+            }
+            appRunner.runApp();
+          });
+        },
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>
+
