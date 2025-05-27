@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="A new Flutter project." />
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="flutter_portfolio" />
+    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+    <link rel="icon" type="image/jpg" href="favicon.jpg" />
+    <link rel="manifest" href="manifest.json" />
+    <title>flutter_portfolio</title>
+
+    <base href="$FLUTTER_BASE_HREF" />
+
+    <style>
+    .loading {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 8px solid #00AD87;
+      border-right: 8px solid #C30E48;
+      border-bottom: 8px solid #00AD87;
+      border-left: 8px solid #C30E48;
+      width: 60px;
+      height: 60px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- Loading Spinner -->
+<div class="loading">
+    <div class="loader"></div>
+</div>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics-compat.js"></script>
+
+<!-- Firebase Initialization -->
+<script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBJEuBWzxCXFYkg2XmyndmF9liyCptZixs",
+      authDomain: "portfolio-ahmed-sayed.firebaseapp.com",
+      projectId: "portfolio-ahmed-sayed",
+      storageBucket: "portfolio-ahmed-sayed.appspot.com",
+      messagingSenderId: "491952033244",
+      appId: "1:491952033244:web:2187673b59ddee9ee61319",
+      measurementId: "G-0S5SYC7LH8"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+<!-- Flutter engine script -->
+<script src="flutter.js" defer></script>
+<script>
+    var serviceWorkerVersion = null;
+
+    window.addEventListener("load", function () {
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function (engineInitializer) {
+          engineInitializer.initializeEngine().then(function (appRunner) {
+            appRunner.runApp();
+          });
+        },
+      });
+    });
+  </script>
+</body>
+
+</html>
