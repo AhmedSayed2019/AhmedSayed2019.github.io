@@ -2,24 +2,24 @@
 <html>
 
 <head>
-  <meta charset="UTF-8"/>
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
-  <meta name="description" content="A new Flutter project."/>
+    <meta charset="UTF-8"/>
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+    <meta name="description" content="A new Flutter project."/>
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-  <meta name="apple-mobile-web-app-title" content="Ahmed Sayed"/>
-  <link rel="apple-touch-icon" href="icons/Icon-192.png"/>
-  <link rel="icon" type="image/jpg" href="favicon.jpg"/>
-  <link rel="manifest" href="manifest.json"/>
-  <title>Ahmed Sayed</title>
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-title" content="flutter_portfolio"/>
+    <link rel="apple-touch-icon" href="icons/Icon-192.png"/>
+    <link rel="icon" type="image/jpg" href="favicon.jpg"/>
+    <link rel="manifest" href="manifest.json"/>
+    <title>flutter_portfolio</title>
 
-  <base href="$FLUTTER_BASE_HREF"/>
+    <base href="/"/>
 
-  <style>
+    <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
+    
     /* ===== CENTRALIZED COLOR VARIABLES ===== */
     :root {
       /* Main color scheme - easily change colors from here */
@@ -263,58 +263,58 @@
 <body>
 <!-- Enhanced Loading Screen -->
 <div class="loading-container">
-  <div class="background-pattern" id="pattern"></div>
+    <div class="background-pattern" id="pattern"></div>
 
-  <div class="loading-content">
-    <div class="greeting">HELLO, <span class="highlight">I'M</span></div>
+    <div class="loading-content">
+        <div class="greeting">HELLO, <span class="highlight">I'M</span></div>
 
-    <h1 class="name">
-      Ahmed Sayed
-      <span class="name-outline">Ahmed Sayed</span>
-    </h1>
+        <h1 class="name">
+            Ahmed Sayed
+            <span class="name-outline">Ahmed Sayed</span>
+        </h1>
 
-    <!--        <div class="role">-->
-    <!--             <span class="role-highlight">Mobile Software Engineer</span>-->
-    <!--        </div>-->
-    <div class="typing-container">
-      <div class="typing-text">Mobile Software Engineer</div>
+<!--        <div class="role">-->
+<!--             <span class="role-highlight">Mobile Software Engineer</span>-->
+<!--        </div>-->
+        <div class="typing-container">
+            <div class="typing-text">Mobile Software Engineer</div>
+        </div>
+        <div class="profile-container">
+            <div class="profile-circle"></div>
+            <img src="my_image.png" alt="Ahmed Sayed" class="profile-image">
+        </div>
+
+        <div class="completed-projects-container">
+            <div class="stat-bubble" style="animation-delay: 0.2s">
+                <div class="stat-number">7<span class="stat-plus">+</span></div>
+                <div class="stat-label">YEARS OF EXPERIENCE</div>
+            </div>
+
+
+        </div>
+        <div class="years-of-experience-container">
+
+            <div class="stat-bubble" style="animation-delay: 0.4s">
+                <div class="stat-number">30</div>
+                <div class="stat-label">COMPLETED PROJECTS</div>
+            </div>
+        </div>
+        <!--        <div class="stats-container">-->
+        <!--            <div class="stat-bubble" style="animation-delay: 0.2s">-->
+        <!--                <div class="stat-number">7<span class="stat-plus">+</span></div>-->
+        <!--                <div class="stat-label">YEARS OF EXPERIENCE</div>-->
+        <!--            </div>-->
+
+        <!--            <div class="stat-bubble" style="animation-delay: 0.4s">-->
+        <!--                <div class="stat-number">30</div>-->
+        <!--                <div class="stat-label">COMPLETED PROJECTS</div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+<!--        <div class="typing-container">-->
+<!--            <div class="typing-text">Mobile Software Engineer • Flutter Expert</div>-->
+<!--        </div>-->
     </div>
-    <div class="profile-container">
-      <div class="profile-circle"></div>
-      <img src="my_image.png" alt="Ahmed Sayed" class="profile-image">
-    </div>
-
-    <div class="completed-projects-container">
-      <div class="stat-bubble" style="animation-delay: 0.2s">
-        <div class="stat-number">7<span class="stat-plus">+</span></div>
-        <div class="stat-label">YEARS OF EXPERIENCE</div>
-      </div>
-
-
-    </div>
-    <div class="years-of-experience-container">
-
-      <div class="stat-bubble" style="animation-delay: 0.4s">
-        <div class="stat-number">30</div>
-        <div class="stat-label">COMPLETED PROJECTS</div>
-      </div>
-    </div>
-    <!--        <div class="stats-container">-->
-    <!--            <div class="stat-bubble" style="animation-delay: 0.2s">-->
-    <!--                <div class="stat-number">7<span class="stat-plus">+</span></div>-->
-    <!--                <div class="stat-label">YEARS OF EXPERIENCE</div>-->
-    <!--            </div>-->
-
-    <!--            <div class="stat-bubble" style="animation-delay: 0.4s">-->
-    <!--                <div class="stat-number">30</div>-->
-    <!--                <div class="stat-label">COMPLETED PROJECTS</div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-
-    <!--        <div class="typing-container">-->
-    <!--            <div class="typing-text">Mobile Software Engineer • Flutter Expert</div>-->
-    <!--        </div>-->
-  </div>
 </div>
 
 <!-- Firebase SDKs -->
@@ -379,7 +379,7 @@
 <!-- Flutter engine script -->
 <script src="flutter.js" defer></script>
 <script>
-    var serviceWorkerVersion = null;
+    const serviceWorkerVersion = "3068486251";
 
     window.addEventListener("load", function () {
       // Get the CSS variable value for intro display time
