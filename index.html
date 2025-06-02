@@ -1,421 +1,76 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
 
-<head>
-    <meta charset="UTF-8"/>
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
-    <meta name="description" content="A new Flutter project."/>
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+    <base href="/" />
+<!--    <base href="https://ahmedsayed2019.github.io/" />-->
+
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="A new Flutter project." />
 
     <!-- iOS meta tags & icons -->
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <meta name="apple-mobile-web-app-title" content="flutter_portfolio"/>
-    <link rel="apple-touch-icon" href="icons/Icon-192.png"/>
-    <link rel="icon" type="image/jpg" href="favicon.jpg"/>
-    <link rel="manifest" href="manifest.json"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="flutter_portfolio" />
+    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" href="favicon.jpg" />
+
     <title>flutter_portfolio</title>
+    <link rel="manifest" href="manifest.json" />
 
-    <base href="$FLUTTER_BASE_HREF"/>
+    <script>
+      // The value below is injected by flutter build, do not touch.
+      var serviceWorkerVersion = '1991459447';
+    </script>
+    <!-- This script adds the flutter initialization JS code -->
+    <script src="flutter.js" defer></script>
+  </head>
+  <body>
+    <!-- Loading Indicator -->
+    <div class="container" id="loading_container">
+    <img alt="loading indicator" class="indicator" src="./assets/images/my_image.jpg" />
 
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-    
-    /* ===== CENTRALIZED COLOR VARIABLES ===== */
-    :root {
-      /* Main color scheme - easily change colors from here */
-      --primary-color: #c66c54;       /* Main accent color - previously #1abc9c */
-      --text-dark: #333333;           /* Dark text color */
-      --text-medium: #555555;         /* Medium text color */
-      --text-light: #777777;          /* Light text color */
-      --background-color: #f5f5f0;    /* Background color */
-      --white-color: #ffffff;         /* White color */
-      --shadow-color: rgba(0, 0, 0, 0.1); /* Shadow color */
-
-      /* Timing variables for animations */
-      --intro-display-time: 300000ms;   /* Time to display intro before loading Flutter app */
-      --fade-transition-time: 800ms;  /* Fade transition time */
-    }
-
-    body {
-      background-color: var(--background-color);
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      overflow: hidden;
-    }
-
-    .loading-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      width: 100vw;
-      position: relative;
-    }
-
-    .background-pattern {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      opacity: 0.5;
-    }
-
-    .dot {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background-color: var(--primary-color);
-      border-radius: 50%;
-      opacity: 0.6;
-    }
-
-    .loading-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      max-width: 500px;
-      padding: 20px;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .greeting {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 5px;
-      color: var(--text-dark);
-    }
-
-    .highlight {
-      color: var(--primary-color);
-      font-weight: 600;
-    }
-
-    .name {
-      font-size: 42px;
-      font-weight: 700;
-      margin: 10px 0;
-      text-transform: uppercase;
-      color: var(--text-dark);
-      position: relative;
-      display: inline-block;
-    }
-
-    .name-outline {
-      position: absolute;
-      top: 0;
-      left: 0;
-      color: transparent;
-      -webkit-text-stroke: 1.5px var(--primary-color);
-      z-index: -1;
-    }
-
-    .role {
-      font-size: 20px;
-      margin: 10px 0 30px;
-      font-weight: 500;
-      color: var(--text-medium);
-    }
-
-
-    .profile-container {
-      position: relative;
-      width: 280px;
-      height: 280px;
-      margin: 0 auto;
-    }
-
-    .profile-circle {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background-color: var(--primary-color);
-      position: absolute;
-      top: 0;
-      left: 0;
-      animation: pulseBackground 3s infinite ease-in-out;
-    }
-
-    .profile-image {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      position: relative;
-      z-index: 1;
-    }
-
-    .stats-container {
-      display: flex;
-      justify-content: space-around;
-      margin-top: -40px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .completed-projects-container {
-      display: flex;
-      justify-content: space-around;
-      margin-top: -100px;
-      margin-left: -220px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .years-of-experience-container {
-      display: flex;
-      justify-content: space-around;
-     margin-top: -20px;
-
-      margin-right: -220px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .stat-bubble {
-      background-color: var(--white-color);
-      border-radius: 30px;
-      padding: 8px 15px;
-      box-shadow: 0 4px 10px var(--shadow-color);
-      display: flex;
-      align-items: center;
-      animation: slideIn 0.5s ease-out;
-    }
-
-    .stat-number {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-right: 5px;
-    }
-
-    .stat-plus {
-      color: var(--primary-color);
-      font-weight: 700;
-      font-size: 22px;
-    }
-
-    .stat-label {
-      font-size: 10px;
-      color: var(--text-light);
-      text-transform: uppercase;
-      line-height: 1.2;
-      max-width: 80px;
-    }
-
-    .typing-container {
-      display: inline-block;
-      margin-top: 10px;
-    }
-    .role-highlight {
-      font-family: 'Brush Script MT', cursive;
-      font-size: 24px;
-      color: var(--text-dark);
-    }
-
-    .typing-text {
-      overflow: hidden;
-      font-family: 'Brush Script MT', cursive;
-      font-size: 24px;
-      margin-bottom: 20px;
-      white-space: nowrap;
-      border-right: 3px solid var(--primary-color);
-      animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-      color: var(--text-dark);
-
-    }
-
-    /* Animations */
-    @keyframes pulseBackground {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: var(--primary-color) }
-    }
-
-    </style>
-</head>
-
-<body>
-<!-- Enhanced Loading Screen -->
-<div class="loading-container">
-    <div class="background-pattern" id="pattern"></div>
-
-    <div class="loading-content">
-        <div class="greeting">HELLO, <span class="highlight">I'M</span></div>
-
-        <h1 class="name">
-            Ahmed Sayed
-            <span class="name-outline">Ahmed Sayed</span>
-        </h1>
-
-<!--        <div class="role">-->
-<!--             <span class="role-highlight">Mobile Software Engineer</span>-->
-<!--        </div>-->
-        <div class="typing-container">
-            <div class="typing-text">Mobile Software Engineer</div>
-        </div>
-        <div class="profile-container">
-            <div class="profile-circle"></div>
-            <img src="my_image.png" alt="Ahmed Sayed" class="profile-image">
-        </div>
-
-        <div class="completed-projects-container">
-            <div class="stat-bubble" style="animation-delay: 0.2s">
-                <div class="stat-number">7<span class="stat-plus">+</span></div>
-                <div class="stat-label">YEARS OF EXPERIENCE</div>
-            </div>
-
-
-        </div>
-        <div class="years-of-experience-container">
-
-            <div class="stat-bubble" style="animation-delay: 0.4s">
-                <div class="stat-number">30</div>
-                <div class="stat-label">COMPLETED PROJECTS</div>
-            </div>
-        </div>
-        <!--        <div class="stats-container">-->
-        <!--            <div class="stat-bubble" style="animation-delay: 0.2s">-->
-        <!--                <div class="stat-number">7<span class="stat-plus">+</span></div>-->
-        <!--                <div class="stat-label">YEARS OF EXPERIENCE</div>-->
-        <!--            </div>-->
-
-        <!--            <div class="stat-bubble" style="animation-delay: 0.4s">-->
-        <!--                <div class="stat-number">30</div>-->
-        <!--                <div class="stat-label">COMPLETED PROJECTS</div>-->
-        <!--            </div>-->
-        <!--        </div>-->
-
-<!--        <div class="typing-container">-->
-<!--            <div class="typing-text">Mobile Software Engineer • Flutter Expert</div>-->
-<!--        </div>-->
+      <!--      <img alt="loading indicator" class="indicator" src="./assets/loading.gif" />-->
     </div>
-</div>
-
-<!-- Firebase SDKs -->
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics-compat.js"></script>
-
-<!-- Firebase Initialization -->
-<script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyBJEuBWzxCXFYkg2XmyndmF9liyCptZixs",
-      authDomain: "portfolio-ahmed-sayed.firebaseapp.com",
-      projectId: "portfolio-ahmed-sayed",
-      storageBucket: "portfolio-ahmed-sayed.appspot.com",
-      messagingSenderId: "491952033244",
-      appId: "1:491952033244:web:2187673b59ddee9ee61319",
-      measurementId: "G-0S5SYC7LH8"
-    };
-
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-
-</script>
-
-<!-- Background pattern animation script -->
-<script>
-    // Create animated dot pattern background
-    function createDotPattern() {
-        const pattern = document.getElementById('pattern');
-        const numDots = 50;
-
-        for (let i = 0; i < numDots; i++) {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-
-            // Random position
-            const x = Math.random() * 100;
-            const y = Math.random() * 100;
-            dot.style.left = `${x}%`;
-            dot.style.top = `${y}%`;
-
-            // Random size
-            const size = Math.random() * 5 + 3;
-            dot.style.width = `${size}px`;
-            dot.style.height = `${size}px`;
-
-            // Random animation
-            const duration = Math.random() * 10 + 10;
-            dot.style.animation = `float ${duration}s infinite ease-in-out`;
-            dot.style.animationDelay = `${Math.random() * 5}s`;
-
-            pattern.appendChild(dot);
-        }
-    }
-
-    // Initialize the background pattern
-    window.addEventListener('DOMContentLoaded', createDotPattern);
-
-</script>
-
-<!-- Flutter engine script -->
-<script src="flutter.js" defer></script>
-<script>
-    var serviceWorkerVersion = null;
-
-    window.addEventListener("load", function () {
-      // Get the CSS variable value for intro display time
-      const introDisplayTime = parseInt(getComputedStyle(document.documentElement)
-        .getPropertyValue('--intro-display-time')) || 5000;
-
-      const fadeTransitionTime = parseInt(getComputedStyle(document.documentElement)
-        .getPropertyValue('--fade-transition-time')) || 800;
-
-      // Delay the Flutter initialization to show the enhanced intro
-      setTimeout(function() {
+    <script>
+      window.onload = function () {
+        setTimeout(function () {
+          var loadingIndicator = document.getElementById("loading_container");
+          if (loadingIndicator) {
+            loadingIndicator.remove();
+          }
+        }, 1000);
+      };
+    </script>
+    <script>
+      window.addEventListener("load", function (ev) {
+        // Download main.dart.js
         _flutter.loader.loadEntrypoint({
           serviceWorker: {
             serviceWorkerVersion: serviceWorkerVersion,
           },
           onEntrypointLoaded: function (engineInitializer) {
             engineInitializer.initializeEngine().then(function (appRunner) {
-              // Hide the loading screen once the Flutter app is ready to run
-              var loadingContainer = document.querySelector('.loading-container');
-              if (loadingContainer) {
-                // Add a fade-out effect
-                loadingContainer.style.transition = `opacity ${fadeTransitionTime}ms ease-out`;
-                loadingContainer.style.opacity = '0';
-                // Remove the loading screen from the DOM after the transition
-                setTimeout(function() {
-                  loadingContainer.remove();
-                }, fadeTransitionTime); // Match the transition duration
-              }
               appRunner.runApp();
             });
           },
         });
-      }, introDisplayTime); // Show the enhanced intro for the specified time
-    });
-
-</script>
-</body>
-
+      });
+    </script>
+  </body>
 </html>
