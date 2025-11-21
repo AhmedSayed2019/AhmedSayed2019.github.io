@@ -2,20 +2,20 @@
 <html>
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
-    <meta name="description" content="A new Flutter project."/>
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="A new Flutter project." />
 
     <!-- iOS meta tags & icons -->
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <meta name="apple-mobile-web-app-title" content="Ahmed Sayed"/>
-    <link rel="apple-touch-icon" href="icons/Icon-192.png"/>
-    <link rel="icon" type="image/jpg" href="favicon.jpg"/>
-    <link rel="manifest" href="manifest.json"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Ahmed Sayed" />
+    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+    <link rel="icon" type="image/jpg" href="favicon.jpg" />
+    <link rel="manifest" href="manifest.json" />
     <title>Ahmed Sayed</title>
 
-    <base href="/"/>
+    <base href="$FLUTTER_BASE_HREF" />
 
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -23,8 +23,7 @@
     /* ===== CENTRALIZED COLOR VARIABLES ===== */
     :root {
       /* Main color scheme - easily change colors from here */
-      --primary-color: #116ac3;       /* Main accent color - previously #1abc9c */
-<!--      &#45;&#45;primary-color: #c66c54;       /* Main accent color - previously #1abc9c */-->
+      --primary-color: #c66c54;       /* Main accent color - previously #1abc9c */
       --text-dark: #333333;           /* Dark text color */
       --text-medium: #555555;         /* Medium text color */
       --text-light: #777777;          /* Light text color */
@@ -33,7 +32,7 @@
       --shadow-color: rgba(0, 0, 0, 0.1); /* Shadow color */
 
       /* Timing variables for animations */
-      --intro-display-time: 3000ms;   /* Time to display intro before loading Flutter app */
+      --intro-display-time: 500000ms;   /* Time to display intro before loading Flutter app */
       --fade-transition-time: 800ms;  /* Fade transition time */
     }
 
@@ -117,6 +116,11 @@
       color: var(--text-medium);
     }
 
+    .role-highlight {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 24px;
+      color: var(--text-dark);
+    }
 
     .profile-container {
       position: relative;
@@ -149,25 +153,6 @@
       display: flex;
       justify-content: space-around;
       margin-top: -40px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .completed-projects-container {
-      display: flex;
-      justify-content: space-around;
-      margin-top: -100px;
-      margin-left: -220px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .years-of-experience-container {
-      display: flex;
-      justify-content: space-around;
-     margin-top: -20px;
-
-      margin-right: -220px;
       position: relative;
       z-index: 2;
     }
@@ -207,22 +192,14 @@
       display: inline-block;
       margin-top: 10px;
     }
-    .role-highlight {
-      font-family: 'Brush Script MT', cursive;
-      font-size: 24px;
-      color: var(--text-dark);
-    }
 
     .typing-text {
       overflow: hidden;
-      font-family: 'Brush Script MT', cursive;
-      font-size: 24px;
-      margin-bottom: 20px;
       white-space: nowrap;
       border-right: 3px solid var(--primary-color);
       animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-      color: var(--text-dark);
-
+      font-size: 16px;
+      color: var(--text-medium);
     }
 
     /* Animations */
@@ -257,8 +234,7 @@
       from, to { border-color: transparent }
       50% { border-color: var(--primary-color) }
     }
-
-    </style>
+  </style>
 </head>
 
 <body>
@@ -275,45 +251,30 @@
         </h1>
 
 <!--        <div class="role">-->
-<!--             <span class="role-highlight">Mobile Software Engineer</span>-->
+<!--            I AM <span class="role-highlight">Mobile Software Engineer</span>-->
 <!--        </div>-->
-        <div class="typing-container">
-            <div class="typing-text">Mobile Software Engineer</div>
-        </div>
+
         <div class="profile-container">
             <div class="profile-circle"></div>
             <img src="my_image.png" alt="Ahmed Sayed" class="profile-image">
         </div>
 
-        <div class="completed-projects-container">
+        <div class="stats-container">
             <div class="stat-bubble" style="animation-delay: 0.2s">
-                <div class="stat-number">5<span class="stat-plus">+</span></div>
+                <div class="stat-number">7<span class="stat-plus">+</span></div>
                 <div class="stat-label">YEARS OF EXPERIENCE</div>
             </div>
 
-
-        </div>
-        <div class="years-of-experience-container">
-
             <div class="stat-bubble" style="animation-delay: 0.4s">
-                <div class="stat-number">30</div>
+                <div class="stat-number">+30</div>
                 <div class="stat-label">COMPLETED PROJECTS</div>
             </div>
         </div>
-        <!--        <div class="stats-container">-->
-        <!--            <div class="stat-bubble" style="animation-delay: 0.2s">-->
-        <!--                <div class="stat-number">7<span class="stat-plus">+</span></div>-->
-        <!--                <div class="stat-label">YEARS OF EXPERIENCE</div>-->
-        <!--            </div>-->
-
-        <!--            <div class="stat-bubble" style="animation-delay: 0.4s">-->
-        <!--                <div class="stat-number">30</div>-->
-        <!--                <div class="stat-label">COMPLETED PROJECTS</div>-->
-        <!--            </div>-->
-        <!--        </div>-->
-
+        <div class="role">
+            I AM <span class="role-highlight">Mobile Software Engineer</span>
+        </div>
 <!--        <div class="typing-container">-->
-<!--            <div class="typing-text">Mobile Software Engineer • Flutter Expert</div>-->
+<!--            <div class="typing-text">Mobile Software Engineer</div>-->
 <!--        </div>-->
     </div>
 </div>
@@ -338,7 +299,6 @@
 
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
-
 </script>
 
 <!-- Background pattern animation script -->
@@ -374,13 +334,12 @@
 
     // Initialize the background pattern
     window.addEventListener('DOMContentLoaded', createDotPattern);
-
 </script>
 
 <!-- Flutter engine script -->
 <script src="flutter.js" defer></script>
 <script>
-    const serviceWorkerVersion = "3202289924";
+    var serviceWorkerVersion = null;
 
     window.addEventListener("load", function () {
       // Get the CSS variable value for intro display time
@@ -415,7 +374,6 @@
         });
       }, introDisplayTime); // Show the enhanced intro for the specified time
     });
-
 </script>
 </body>
 

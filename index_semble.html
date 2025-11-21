@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="A new Flutter project." />
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Ahmed Sayed" />
+    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+    <link rel="icon" type="image/jpg" href="favicon.jpg" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Ahmed Sayed</title>
+
+    <base href="$FLUTTER_BASE_HREF" />
+
+    <style>
+    body {
+      /* Optional: Set a background color for the loading screen */
+      background-color: #ffffff; /* White background */
+      margin: 0; /* Ensure no default body margin */
+    }
+
+    .loading {
+      display: flex;
+      flex-flow: column; /* Stack image and name vertically */
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center; /* Center text */
+    }
+
+    .loading-photo {
+      width: 120px; /* Adjust size as needed */
+      height: 120px; /* Adjust size as needed */
+      border-radius: 50%; /* Make it circular */
+      margin-bottom: 20px; /* Space between photo and name */
+      animation: pulse 2.5s infinite ease-in-out; /* Apply pulse animation */
+      object-fit: cover; /* Ensure the image covers the area well */
+      border: 3px solid #f0f0f0; /* Optional subtle border */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+    }
+
+    .loading-name {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Choose a suitable font */
+      font-size: 1.3em; /* Adjust size as needed */
+      color: #333; /* Adjust color as needed */
+      margin: 0; /* Remove default paragraph margin */
+      font-weight: 600;
+    }
+
+    /* Pulse Animation */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.9;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0.9;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- New Formal Loading Screen -->
+<div class="loading">
+    <img src="favicon.jpg" alt="Loading - Ahmed Sayed" class="loading-photo" />
+    <p class="loading-name">Welcome I'm \n Ahmed Sayed A Mobile Software Engineer</p>
+<!--    <p class="loading-name">Ahmed sayed</p>-->
+</div>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics-compat.js"></script>
+
+<!-- Firebase Initialization -->
+<script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBJEuBWzxCXFYkg2XmyndmF9liyCptZixs",
+      authDomain: "portfolio-ahmed-sayed.firebaseapp.com",
+      projectId: "portfolio-ahmed-sayed",
+      storageBucket: "portfolio-ahmed-sayed.appspot.com",
+      messagingSenderId: "491952033244",
+      appId: "1:491952033244:web:2187673b59ddee9ee61319",
+      measurementId: "G-0S5SYC7LH8"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+<!-- Flutter engine script -->
+<script src="flutter.js" defer></script>
+<script>
+    var serviceWorkerVersion = null;
+
+    window.addEventListener("load", function () {
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function (engineInitializer) {
+          engineInitializer.initializeEngine().then(function (appRunner) {
+            // Hide the loading screen once the Flutter app is ready to run
+            var loadingScreen = document.querySelector('.loading');
+            if (loadingScreen) {
+              // Optional: Add a fade-out effect
+              loadingScreen.style.transition = 'opacity 0.5s ease-out';
+              loadingScreen.style.opacity = '0';
+              // Remove the loading screen from the DOM after the transition
+              setTimeout(function() {
+                loadingScreen.remove();
+              }, 500); // Match the transition duration
+            }
+            appRunner.runApp();
+          });
+        },
+      });
+    });
+  </script>
+</body>
+
+</html>
+
