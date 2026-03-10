@@ -18,245 +18,245 @@
     <base href="/"/>
 
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-    
-    /* ===== CENTRALIZED COLOR VARIABLES ===== */
-    :root {
-      /* Main color scheme - easily change colors from here */
-      --primary-color: #116ac3;       /* Main accent color - previously #1abc9c */
-<!--      &#45;&#45;primary-color: #c66c54;       /* Main accent color - previously #1abc9c */-->
-      --text-dark: #333333;           /* Dark text color */
-      --text-medium: #555555;         /* Medium text color */
-      --text-light: #777777;          /* Light text color */
-      --background-color: #f5f5f0;    /* Background color */
-      --white-color: #ffffff;         /* White color */
-      --shadow-color: rgba(0, 0, 0, 0.1); /* Shadow color */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-      /* Timing variables for animations */
-      --intro-display-time: 3000ms;   /* Time to display intro before loading Flutter app */
-      --fade-transition-time: 800ms;  /* Fade transition time */
-    }
+        /* ===== CENTRALIZED COLOR VARIABLES ===== */
+        :root {
+          /* Main color scheme - easily change colors from here */
+          --primary-color: #116ac3;       /* Main accent color - previously #1abc9c */
+    <!--      &#45;&#45;primary-color: #c66c54;       /* Main accent color - previously #1abc9c */-->
+          --text-dark: #333333;           /* Dark text color */
+          --text-medium: #555555;         /* Medium text color */
+          --text-light: #777777;          /* Light text color */
+          --background-color: #f5f5f0;    /* Background color */
+          --white-color: #ffffff;         /* White color */
+          --shadow-color: rgba(0, 0, 0, 0.1); /* Shadow color */
 
-    body {
-      background-color: var(--background-color);
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      overflow: hidden;
-    }
+          /* Timing variables for animations */
+          --intro-display-time: 3000ms;   /* Time to display intro before loading Flutter app */
+          --fade-transition-time: 800ms;  /* Fade transition time */
+        }
 
-    .loading-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      width: 100vw;
-      position: relative;
-    }
+        body {
+          background-color: var(--background-color);
+          margin: 0;
+          font-family: 'Poppins', sans-serif;
+          overflow: hidden;
+        }
 
-    .background-pattern {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      opacity: 0.5;
-    }
+        .loading-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          width: 100vw;
+          position: relative;
+        }
 
-    .dot {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background-color: var(--primary-color);
-      border-radius: 50%;
-      opacity: 0.6;
-    }
+        .background-pattern {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          opacity: 0.5;
+        }
 
-    .loading-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      max-width: 500px;
-      padding: 20px;
-      animation: fadeIn 1s ease-in-out;
-    }
+        .dot {
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          background-color: var(--primary-color);
+          border-radius: 50%;
+          opacity: 0.6;
+        }
 
-    .greeting {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 5px;
-      color: var(--text-dark);
-    }
+        .loading-content {
+          position: relative;
+          z-index: 1;
+          text-align: center;
+          max-width: 500px;
+          padding: 20px;
+          animation: fadeIn 1s ease-in-out;
+        }
 
-    .highlight {
-      color: var(--primary-color);
-      font-weight: 600;
-    }
+        .greeting {
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 5px;
+          color: var(--text-dark);
+        }
 
-    .name {
-      font-size: 42px;
-      font-weight: 700;
-      margin: 10px 0;
-      text-transform: uppercase;
-      color: var(--text-dark);
-      position: relative;
-      display: inline-block;
-    }
+        .highlight {
+          color: var(--primary-color);
+          font-weight: 600;
+        }
 
-    .name-outline {
-      position: absolute;
-      top: 0;
-      left: 0;
-      color: transparent;
-      -webkit-text-stroke: 1.5px var(--primary-color);
-      z-index: -1;
-    }
+        .name {
+          font-size: 42px;
+          font-weight: 700;
+          margin: 10px 0;
+          text-transform: uppercase;
+          color: var(--text-dark);
+          position: relative;
+          display: inline-block;
+        }
 
-    .role {
-      font-size: 20px;
-      margin: 10px 0 30px;
-      font-weight: 500;
-      color: var(--text-medium);
-    }
+        .name-outline {
+          position: absolute;
+          top: 0;
+          left: 0;
+          color: transparent;
+          -webkit-text-stroke: 1.5px var(--primary-color);
+          z-index: -1;
+        }
+
+        .role {
+          font-size: 20px;
+          margin: 10px 0 30px;
+          font-weight: 500;
+          color: var(--text-medium);
+        }
 
 
-    .profile-container {
-      position: relative;
-      width: 280px;
-      height: 280px;
-      margin: 0 auto;
-    }
+        .profile-container {
+          position: relative;
+          width: 280px;
+          height: 280px;
+          margin: 0 auto;
+        }
 
-    .profile-circle {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background-color: var(--primary-color);
-      position: absolute;
-      top: 0;
-      left: 0;
-      animation: pulseBackground 3s infinite ease-in-out;
-    }
+        .profile-circle {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          background-color: var(--primary-color);
+          position: absolute;
+          top: 0;
+          left: 0;
+          animation: pulseBackground 3s infinite ease-in-out;
+        }
 
-    .profile-image {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      position: relative;
-      z-index: 1;
-    }
+        .profile-image {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+          position: relative;
+          z-index: 1;
+        }
 
-    .stats-container {
-      display: flex;
-      justify-content: space-around;
-      margin-top: -40px;
-      position: relative;
-      z-index: 2;
-    }
+        .stats-container {
+          display: flex;
+          justify-content: space-around;
+          margin-top: -40px;
+          position: relative;
+          z-index: 2;
+        }
 
-    .completed-projects-container {
-      display: flex;
-      justify-content: space-around;
-      margin-top: -100px;
-      margin-left: -220px;
-      position: relative;
-      z-index: 2;
-    }
+        .completed-projects-container {
+          display: flex;
+          justify-content: space-around;
+          margin-top: -100px;
+          margin-left: -220px;
+          position: relative;
+          z-index: 2;
+        }
 
-    .years-of-experience-container {
-      display: flex;
-      justify-content: space-around;
-     margin-top: -20px;
+        .years-of-experience-container {
+          display: flex;
+          justify-content: space-around;
+         margin-top: -20px;
 
-      margin-right: -220px;
-      position: relative;
-      z-index: 2;
-    }
+          margin-right: -220px;
+          position: relative;
+          z-index: 2;
+        }
 
-    .stat-bubble {
-      background-color: var(--white-color);
-      border-radius: 30px;
-      padding: 8px 15px;
-      box-shadow: 0 4px 10px var(--shadow-color);
-      display: flex;
-      align-items: center;
-      animation: slideIn 0.5s ease-out;
-    }
+        .stat-bubble {
+          background-color: var(--white-color);
+          border-radius: 30px;
+          padding: 8px 15px;
+          box-shadow: 0 4px 10px var(--shadow-color);
+          display: flex;
+          align-items: center;
+          animation: slideIn 0.5s ease-out;
+        }
 
-    .stat-number {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-right: 5px;
-    }
+        .stat-number {
+          font-size: 22px;
+          font-weight: 700;
+          color: var(--text-dark);
+          margin-right: 5px;
+        }
 
-    .stat-plus {
-      color: var(--primary-color);
-      font-weight: 700;
-      font-size: 22px;
-    }
+        .stat-plus {
+          color: var(--primary-color);
+          font-weight: 700;
+          font-size: 22px;
+        }
 
-    .stat-label {
-      font-size: 10px;
-      color: var(--text-light);
-      text-transform: uppercase;
-      line-height: 1.2;
-      max-width: 80px;
-    }
+        .stat-label {
+          font-size: 10px;
+          color: var(--text-light);
+          text-transform: uppercase;
+          line-height: 1.2;
+          max-width: 80px;
+        }
 
-    .typing-container {
-      display: inline-block;
-      margin-top: 10px;
-    }
-    .role-highlight {
-      font-family: 'Brush Script MT', cursive;
-      font-size: 24px;
-      color: var(--text-dark);
-    }
+        .typing-container {
+          display: inline-block;
+          margin-top: 10px;
+        }
+        .role-highlight {
+          font-family: 'Brush Script MT', cursive;
+          font-size: 24px;
+          color: var(--text-dark);
+        }
 
-    .typing-text {
-      overflow: hidden;
-      font-family: 'Brush Script MT', cursive;
-      font-size: 24px;
-      margin-bottom: 20px;
-      white-space: nowrap;
-      border-right: 3px solid var(--primary-color);
-      animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-      color: var(--text-dark);
+        .typing-text {
+          overflow: hidden;
+          font-family: 'Brush Script MT', cursive;
+          font-size: 24px;
+          margin-bottom: 20px;
+          white-space: nowrap;
+          border-right: 3px solid var(--primary-color);
+          animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+          color: var(--text-dark);
 
-    }
+        }
 
-    /* Animations */
-    @keyframes pulseBackground {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
+        /* Animations */
+        @keyframes pulseBackground {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+          100% { transform: scale(1); }
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
 
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        @keyframes slideIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
 
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-    }
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0px); }
+        }
 
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 100% }
+        }
 
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: var(--primary-color) }
-    }
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          50% { border-color: var(--primary-color) }
+        }
 
     </style>
 </head>
@@ -274,9 +274,9 @@
             <span class="name-outline">Ahmed Sayed</span>
         </h1>
 
-<!--        <div class="role">-->
-<!--             <span class="role-highlight">Mobile Software Engineer</span>-->
-<!--        </div>-->
+        <!--        <div class="role">-->
+        <!--             <span class="role-highlight">Mobile Software Engineer</span>-->
+        <!--        </div>-->
         <div class="typing-container">
             <div class="typing-text">Mobile Software Engineer</div>
         </div>
@@ -312,9 +312,9 @@
         <!--            </div>-->
         <!--        </div>-->
 
-<!--        <div class="typing-container">-->
-<!--            <div class="typing-text">Mobile Software Engineer • Flutter Expert</div>-->
-<!--        </div>-->
+        <!--        <div class="typing-container">-->
+        <!--            <div class="typing-text">Mobile Software Engineer • Flutter Expert</div>-->
+        <!--        </div>-->
     </div>
 </div>
 
@@ -380,7 +380,7 @@
 <!-- Flutter engine script -->
 <script src="flutter.js" defer></script>
 <script>
-    const serviceWorkerVersion = "3202289924";
+    const serviceWorkerVersion = "333199863" /* Flutter's service worker is deprecated and will be removed in a future Flutter release. */;
 
     window.addEventListener("load", function () {
       // Get the CSS variable value for intro display time
